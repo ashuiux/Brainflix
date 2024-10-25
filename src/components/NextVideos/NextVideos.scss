@@ -1,0 +1,25 @@
+@use "../../styles/index" as *;
+
+.videos {
+  width: 100vw;
+  @include flex-column;
+  
+  
+
+  &__item {
+    width: 100vw;
+    @include flex-row;
+
+  }
+  &__media {
+    width: 30%;
+    border-radius: 1rem;
+    margin-right: 1.5rem;
+  }
+
+  &__info {
+  
+    @include flex-column;
+    justify-content: space-between;
+  }
+}

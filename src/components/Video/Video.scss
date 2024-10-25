@@ -1,0 +1,17 @@
+@use "../../styles/index" as *;
+
+.video {
+  width: 100vw;
+
+  &__media {
+    width: 100%;
+    
+  }
+
+  &__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color:$secondary-brainflix-black;
+  }
+}

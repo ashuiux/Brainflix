@@ -1,0 +1,5 @@
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
+
+@forward './partials/variables';
+@forward './partials/mixins';

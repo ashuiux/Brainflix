@@ -1,0 +1,7 @@
+@use './styles/index' as *;
+body
+{
+    background-color: $primary-white;
+    color: $primary-brainflix-black;
+    font-family: $primary-font;
+}
