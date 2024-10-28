@@ -1,0 +1,118 @@
+@use "../../styles/index" as *;
+
+.comment-section {
+  padding: 2rem 1rem;
+  background-color: $primary-white;
+  @include flex-column;
+
+  @include tablet {
+    @include flex-row;
+  }
+
+  @include desktop {
+    @include flex-row;
+  }
+
+  &__title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $secondary-mercury;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+
+  &__form {
+    @include flex-column;
+    gap: 1rem;
+    width: 100%;
+
+    @include desktop {
+      @include flex-row;
+      align-items: flex-end;
+    }
+
+    @include tablet {
+      @include flex-row;
+      align-items: flex-end;
+    }
+    &__details {
+      @include flex-column;
+      width: 100%;
+    }
+
+    &__avatar {
+      background-image: url("../../assets/Images/Mohan-muruge.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      flex: 0 0 50px;
+    }
+
+    &__textarea {
+      width: 100%;
+      height: 100px;
+      border: 1px solid $secondary-mercury;
+      border-radius: 0.25rem;
+      font-size: 1rem;
+     
+      @include tablet {
+        width: 100%;
+        height: auto;
+      }
+      @include desktop {
+        width: 100%;
+        height: auto;
+
+      }
+    }
+  
+  }
+
+  &__comment {
+    display: flex;
+    border: none;
+    font-size: 1rem;
+    background-color: $primary-brainflix-blue;
+    background-image: url("../../assets/Icons/add_comment.svg");
+    background-position: 0.75rem center;
+    background-repeat: no-repeat;
+    border-radius: 0.25rem;
+    height: 3rem;
+    padding: 0 4rem 0 4rem;
+    margin: 0;
+    width: 85%;
+    color: $primary-white;
+    align-self: flex-end;
+
+    &:hover {
+      background-color: $secondary-brainflix-blue;
+    }
+
+    @include tablet {
+      width: 60%;
+    }
+    @include desktop {
+      width: 40%;
+    }
+  }
+}
+
+.comment-section__form__contemt {
+    width: 100%;
+    align-items: flex-start;
+  @include flex-row;
+  gap: 1rem;
+
+
+  @include tablet
+  {
+    align-items: flex-end;
+  }
+  @include desktop
+  {
+    align-items: flex-end;
+  }
+}

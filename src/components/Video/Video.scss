@@ -1,0 +1,35 @@
+@use "../../styles/index" as *;
+
+.video__player {
+  display: flex;
+}
+
+.video__media {
+  display: flex;
+  width: 100vw;
+
+  @include tablet
+  {
+    display: flex;
+    width: 80vw;
+   justify-content: center;
+
+  }
+
+  @include desktop
+  {
+    display: flex;
+    justify-content: center;
+    width: 50vw;
+  }
+
+
+}
+.video__container {
+  display: flex;
+  width: 100vw; 
+  overflow: hidden;
+  max-width: 100%;
+  justify-content: center;
+  background-color: $secondary-brainflix-black;
+}

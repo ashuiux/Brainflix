@@ -1,0 +1,33 @@
+@use "../../styles/index" as *;
+
+.videos {
+  @include flex-column;
+   padding: 1rem 1rem 0 1rem ;
+
+@include desktop 
+{
+  border-left: .0625rem  solid $primary-silver;
+}
+  &__heading {
+    color: $primary-silver;
+    font-weight: 500;
+  }
+  &__item {
+    @include flex-row;
+    margin: 1.5rem 0 1.5rem 0;
+  }
+  &__media {
+    width: 35%;
+    border-radius: 0.25rem;
+    margin-right: 1.5rem;
+  }
+
+  &__info {
+    @include flex-column;
+    justify-content: space-between;
+    padding:  .5rem 0;
+  }
+  &__title {
+    @include page-header-mobile;
+  }
+}
