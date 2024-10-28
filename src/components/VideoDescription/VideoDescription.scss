@@ -3,24 +3,19 @@
 .video {
   display: flex;
   flex-direction: column;
-  
 
-  @include desktop
-  {
+  @include desktop {
     padding: 0 0 0 1rem;
   }
- 
 
   &__content {
     @include flex-column;
     padding: 1rem;
 
-    @include tablet
-    {
+    @include tablet {
       padding: 1rem 1rem;
     }
-    @include desktop
-    {
+    @include desktop {
       padding: 1rem 0rem;
     }
   }
@@ -35,9 +30,22 @@
     justify-content: space-between;
     color: $primary-silver;
     padding: 1rem 0;
-    border-bottom: 0.0625rem solid $secondary-mercury;
+    border: 0.0625rem solid $secondary-mercury;
+    border-right: none;
+    border-left: none;
 
- 
+    @include tablet {
+      border-bottom: 0.0625rem solid $secondary-mercury;
+      border-right: none;
+      border-left: none;
+      border-top: none;
+    }
+    @include desktop {
+      border-bottom: 0.0625rem solid $secondary-mercury;
+      border-right: none;
+      border-left: none;
+      border-top: none;
+    }
   }
 
   &__channel-info {
@@ -59,7 +67,6 @@
   &__creator {
     color: $primary-brainflix-black;
     font-size: 1rem;
-   
   }
 
   &__icons {

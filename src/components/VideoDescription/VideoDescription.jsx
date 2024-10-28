@@ -5,7 +5,7 @@ import ViewsIcon from "../../assets/Icons/views.svg";
 
 function VideoDescription({ video }) {
   const date = new Date(video.timestamp);
-  console.log(date.toDateString());
+  console.log(date.toLocaleDateString());
 
   return (
     <>
@@ -15,7 +15,7 @@ function VideoDescription({ video }) {
     <div className="video__metadata"> 
       <div className="video__channel-info"> 
         <h3 className="video__creator">by {video.channel}</h3>
-        <p className="video__date">{date.toDateString()}</p>
+        <p className="video__date">{date.toLocaleDateString()}</p>
       </div>
       <div className="video__icons">
       <div className="video__views">
