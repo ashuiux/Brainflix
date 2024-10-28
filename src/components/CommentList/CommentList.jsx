@@ -20,7 +20,7 @@ function CommentList({ comments }) {
                 <div className="comment__content">
                   <div className="comment__metadata">
                     <h2 className="comment__name">{comment.name}</h2>
-                    <p className="comment__date">{date.toDateString()}</p>
+                    <p className="comment__date">{date.toLocaleDateString()}</p>
                   </div>
                   <p className="comment__text">{comment.comment}</p>
                 </div>
