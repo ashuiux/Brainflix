@@ -3,10 +3,11 @@ import "./CommentForm.scss";
 function CommentForm() {
   return (
     <>
-<section class="comment-section">
+<section className="comment-section">
   
-  <div class="comment-section__form">
-  <div class="comment-section__form__avatar"></div>
+  <div className="comment-section__form">
+  <div className="comment-section__form__contemt">
+  <div className="comment-section__form__avatar"></div>
 
  
     <div className="comment-section__form__details">
@@ -14,9 +15,10 @@ function CommentForm() {
 
     <div class="comment-section__form__input">
       <textarea
-        class="comment-section__form__textarea"
+        className="comment-section__form__textarea"
         placeholder="Add a new comment"
       ></textarea>
+    </div>
     </div>
     </div>
 
