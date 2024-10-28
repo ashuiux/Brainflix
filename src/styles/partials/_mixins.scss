@@ -18,3 +18,8 @@
     @content;
   }
 }
+
+@mixin page-header-mobile {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}

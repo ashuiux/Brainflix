@@ -1,7 +1,33 @@
 @use './styles/index' as *;
-body
+
+
+.video__info
 {
-    background-color: $primary-white;
-    color: $primary-brainflix-black;
-    font-family: $primary-font;
+display: flex;
+flex-direction: column;
+justify-content: center;
+
+
+@include tablet{
+    display: flex;
+    flex-direction: column;
+ 
+}
+@include desktop{
+    display: flex;
+    flex-direction: row;
+}
+}
+
+.video__data
+{
+    @include desktop{
+        width: 70%;
+    }
+}
+.video__next
+{
+    @include desktop{
+        width: 30%;
+    }
 }

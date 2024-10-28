@@ -1,1 +1,62 @@
-@use '../../styles/index' as *;
+@use "../../styles/index" as *;
+.comments {
+
+  width: 100%;
+  padding: 0 1rem 0 1rem;
+
+  @include desktop
+  {
+    padding: 0 0 0 1rem;
+  }
+
+  &__heading {
+    line-height: 2.5rem;
+  }
+  &__list {
+    @include flex-column;
+    border-top: 0.0625rem solid $secondary-mercury;
+  }
+}
+
+.comment {
+  @include flex-row;
+  border-bottom: 0.0625rem solid $secondary-mercury;
+  
+
+  &__name {
+    @include page-header-mobile;
+  }
+ &__heading
+ {
+  font-size: 1rem;
+
+ }
+  &__content {
+    @include flex-column;
+    padding: 1rem 0;
+    width: 90%;
+    justify-content: center;
+  }
+
+  &__avatar {
+    width: 40v;
+    background-color: $secondary-mercury;
+    border-radius: 50%;
+    margin: 1.2vw;
+  }
+
+  &__metadata {
+    @include flex-row;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 2rem;
+  }
+
+  &__date {
+    color: $primary-silver;
+  }
+
+  &__text {
+    line-height: 1.5rem;
+  }
+}

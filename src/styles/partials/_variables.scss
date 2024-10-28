@@ -10,28 +10,5 @@ $secondary-mercury: #e1e1e1;
 $secondary-alabaster: #fafafa;
 
 //fonts
-@font-face {
-  font-family: "Avenir Next";
-  src: url("../../assets/Font/AvenirNextLTPro-Bold.otf");
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: "Avenir Next";
-  src: url("../../assets/Font/AvenirNextLTPro-Demi.otf");
-  font-weight: 600; // Use a numerical weight for demi-bold
-}
-
-@font-face {
-  font-family: "Avenir Next";
-  src: url("../../assets/Font/AvenirNextLTPro-Regular.otf");
-  font-weight: normal;
-}
-
 $primary-font: "Avenir Next";
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
