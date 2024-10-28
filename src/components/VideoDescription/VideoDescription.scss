@@ -3,7 +3,7 @@
 .video {
   display: flex;
   flex-direction: column;
-  padding: 0rem 1rem;
+  
 
   @include desktop
   {
@@ -13,10 +13,20 @@
 
   &__content {
     @include flex-column;
+    padding: 1rem;
+
+    @include tablet
+    {
+      padding: 1rem 1rem;
+    }
+    @include desktop
+    {
+      padding: 1rem 0rem;
+    }
   }
 
   &__title {
-
+    font-size: 2rem;
     padding: 0.5rem 0;
   }
 

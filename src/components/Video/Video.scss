@@ -27,8 +27,9 @@
 }
 .video__container {
   display: flex;
-  width: 100vw;
- 
+  width: 100vw; 
+  overflow: hidden;
+  max-width: 100%;
   justify-content: center;
   background-color: $secondary-brainflix-black;
 }
