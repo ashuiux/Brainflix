@@ -1,4 +1,3 @@
-import './Comments.scss'
 
 import CommentList from '../CommentList/CommentList'
 // import { useState } from 'react'
