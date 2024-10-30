@@ -6,15 +6,10 @@ function Video({ video }) {
 
   return (
     <>
-      <div className="video__player">
+      <div className="video">
         <div className="video__container">
-        <video
-          className="video__media"
-          poster={video.image}
-          controls
-        ></video>
+          <video className="video__media" poster={video.image} controls></video>
         </div>
-       
       </div>
     </>
   );

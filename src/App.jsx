@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./App.scss";
 import Header from "./components/Header/Header";
-import Comments from "./components/Comments/Comments";
+import CommentList from "./components/CommentList/CommentList";
 import NextVideos from "./components/NextVideos/NextVideos";
 import Video from "./components/Video/Video";
 import VideoDescription from "./components//VideoDescription/VideoDescription";
@@ -21,15 +21,13 @@ function App() {
       <Header />
       <Routes>
     
-      <Route
-            path="/"
-            element={
+      <Route path="/" element={
               <>
                 <Video video={selectedVideo} />
                 <div className="video__info">
                   <div className="video__data">
                     <VideoDescription video={selectedVideo} />
-                    <Comments comments={selectedVideo.comments} />
+                    <CommentList comments={selectedVideo.comments} />
                   </div>
                   <div className="video__next">
                     <NextVideos

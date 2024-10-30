@@ -1,18 +1,15 @@
-// import "./NextVideos.scss";
+import "./NextVideoCard.scss";
 
-function NextVideoCard({ video, onClick}) {
-
+function NextVideoCard({ video, onClick }) {
   return (
     <>
- 
-        <div onClick ={onClick} className="videos__item">
-          <img className="videos__media" src={video.image} />
-          <div className="videos__info">
-            <h2 className="videos__title">{video.title}</h2>
-            <p className="videos__author">by {video.channel}</p>
-          </div>
+      <div onClick={onClick} className="videocard">
+        <img className="videocard__media" src={video.image} />
+        <div className="videocard__info">
+          <h2 className="videocard__title">{video.title}</h2>
+          <p className="videocard__author">by {video.channel}</p>
         </div>
-      
+      </div>
     </>
   );
 }

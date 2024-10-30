@@ -28,7 +28,9 @@ function CommentList({ comments }) {
             );
           })
         ) : (
-          <p className="comments__empty">No comments yet. Be the first to comment!</p>
+          <p className="comments__empty">
+            No comments yet. Be the first to comment!
+          </p>
         )}
       </div>
     </div>

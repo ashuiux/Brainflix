@@ -1,16 +1,13 @@
 @use "../../styles/index" as *;
 
-.upload
-{
+.upload {
+  @include flex-column;
+
+  &__input {
     @include flex-column;
+  }
 
-    &__input
-    {
-        @include flex-column;
-    }
-
-    &__textarea
-    {
-        @include flex-column;
-    }
+  &__textarea {
+    @include flex-column;
+  }
 }
