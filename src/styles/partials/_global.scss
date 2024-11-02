@@ -1,42 +1,41 @@
-
-@use './variables' as *;
-
+@use "./variables" as *;
 
 @font-face {
-    font-family: "Avenir Next";
-    src: url("../../assets/Font/AvenirNextLTPro-Bold.otf");
-    font-weight: bold;
-  }
-  
-  @font-face {
-    font-family: "Avenir Next";
-    src: url("../../assets/Font/AvenirNextLTPro-Demi.otf");
-    font-weight: 600; // Use a numerical weight for demi-bold
-  }
-  
-  @font-face {
-    font-family: "Avenir Next";
-    src: url("../../assets/Font/AvenirNextLTPro-Regular.otf");
-    font-weight: normal;
-  }
-  
+  font-family: "Avenir Next";
+  src: url("../../assets/Font/AvenirNextLTPro-Bold.otf");
+  font-weight: bold;
+}
 
-  *,
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/Font/AvenirNextLTPro-Demi.otf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/Font/AvenirNextLTPro-Regular.otf");
+  font-weight: normal;
+}
+
+*,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0%;
-  font-family:  $primary-font;
+  font-family: $primary-font;
+  list-style: none;
+  text-decoration: none;
+  color: $primary-brainflix-black;
 }
 
-body
-{
-    background-color: $primary-white;
-    color: $primary-brainflix-black;
-    font-family: $primary-font;
+body {
+  background-color: $primary-white;
+  color: $primary-brainflix-black;
+  font-family: $primary-font;
 }
 
-h2, h3
-{
-    font-weight: 600;
+h2,
+h3 {
+  font-weight: 600;
 }

@@ -1,37 +1,21 @@
-import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
 import Header from "./components/Header/Header";
-import Comments from "./components/Comments/Comments";
-import NextVideos from "./components/NextVideos/NextVideos";
-import Video from "./components/Video/Video";
-import VideoDescription from "./components//VideoDescription/VideoDescription";
-import videoDetails from ".//Data/video-details.json";
+import UploadVideoPage from "./pages/UploadVideoPage/UploadVideoPage";
+import HomePage from "./pages/HomePage/HomePage";
 
 function App() {
-  const [selectedVideo, setSelectedVideo] = useState(videoDetails[0]);
-  console.log(selectedVideo);
-
   return (
-    <>
-    
-      <Header />
-     
-      <Video video={selectedVideo} />
-      <div className="video__info">
-        <div className="video__data">
-      <VideoDescription video={selectedVideo} />
-      <Comments comments={selectedVideo.comments} />
-      </div>
-      <div className="video__next">
-      <NextVideos
-
-        selectedVideo={selectedVideo}
-        allVideos={videoDetails}
-        setSelectedVideo={setSelectedVideo}
-      />
-      </div>
-      </div>
-    </>
+    <BrowserRouter>
+      <>
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/videos/:videoId" element={<HomePage />} />
+          <Route path="/upload" element={<UploadVideoPage />} />
+        </Routes>
+      </>
+    </BrowserRouter>
   );
 }
 

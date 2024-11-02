@@ -1,15 +1,13 @@
 import React from "react";
 import "./CommentList.scss";
-import CommentForm from "../CommentForm/CommentForm";
 
-function CommentList({ comments }) {
+function CommentList({ comments = [] }) {
+
   return (
     <div className="comments">
       <h3 className="comments__heading">
         {comments.length} {comments.length === 1 ? "Comment" : "Comments"}
       </h3>
-      <CommentForm />
-
       <div className="comments__list">
         {comments.length ? (
           comments.map((comment) => {
@@ -28,7 +26,9 @@ function CommentList({ comments }) {
             );
           })
         ) : (
-          <p className="comments__empty">No comments yet. Be the first to comment!</p>
+          <p className="comments__empty">
+            No comments yet. Be the first to comment!
+          </p>
         )}
       </div>
     </div>
