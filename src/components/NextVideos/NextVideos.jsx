@@ -1,20 +1,25 @@
 import "./NextVideos.scss";
 import NextVideoCard from "../NextVideoCard/NextVideoCard";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useEffect } from "react";
 
-function NextVideos({ selectedVideo, allVideos }) {
-  const filteredVideos = allVideos.filter(
-    (video) => video.id !== selectedVideo.id
-  );
+function NextVideos({ allVideos, setSelectedVideo }) {
+  const { videoId } = useParams();
+
+  useEffect(() => {
+    const newSelectedVideo = allVideos.find((video) => video.id === videoId);
+    if (newSelectedVideo) setSelectedVideo(newSelectedVideo);
+  }, [videoId, allVideos, setSelectedVideo]);
 
   return (
     <div className="videos">
       <h2 className="videos__heading">NEXT VIDEOS</h2>
-      {filteredVideos.map((video) => (
-        <Link key={video.id} to={`/video/${video.id}`} className="videos__link">
-          <NextVideoCard video={video} />
-        </Link>
-      ))}
+      {allVideos .filter((video) => video.id !== videoId)
+        .map((video) => (
+          <Link key={video.id} to={`/videos/${video.id}`} className="videos__link">
+            <NextVideoCard video={video} />
+          </Link>
+        ))}
     </div>
   );
 }
