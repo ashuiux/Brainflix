@@ -1,0 +1,33 @@
+@use '../../styles/index' as *;
+
+.video-info
+{
+display: flex;
+flex-direction: column;
+justify-content: center;
+
+
+@include tablet{
+    display: flex;
+    flex-direction: column;
+ 
+}
+@include desktop{
+    display: flex;
+    flex-direction: row;
+}
+
+
+&__data
+{
+    @include desktop{
+        width: 70%;
+    }
+}
+&__next
+{
+    @include desktop{
+        width: 30%;
+    }
+}
+}

@@ -7,7 +7,6 @@ function NextVideos({ selectedVideo, allVideos, setSelectedVideo }) {
   });
   function updateSelectedVideo(videoId) {
     const foundVideo = allVideos.find((video) => video.id == videoId);
-
     setSelectedVideo(foundVideo);
   }
 
@@ -17,7 +16,6 @@ function NextVideos({ selectedVideo, allVideos, setSelectedVideo }) {
         <h2 className="videos__heading"> NEXT VIDEOS</h2>
         {filteredVideos.map((video) => (
           <NextVideoCard
-            onClick={() => updateSelectedVideo(video.id)}
             key={video.id}
             video={video}
           />

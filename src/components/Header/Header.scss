@@ -3,6 +3,7 @@
 .header {
   @include flex-column;
   margin: 0 1rem;
+  align-items: center;
 
   @include tablet {
     @include flex-row;
@@ -29,21 +30,13 @@
       @include flex-row;
       align-items: center;
       justify-content: flex-end;
-      width: 45%;
+      width: 50%;
     }
   }
 
   &__logo {
     width: 11.25rem;
-    margin: 1.25rem 1rem;
     align-self: center;
-
-    @include tablet {
-      margin: 0 1rem;
-    }
-    @include desktop {
-      margin: 0 1rem;
-    }
   }
 
   &__search--group {
@@ -57,7 +50,7 @@
     border: 0.125rem solid $secondary-mercury;
     border-radius: 0.25rem;
     font-size: 1rem;
-    background-color: $primary-white;
+    background-color:  $secondary-alabaster;
     background-image: url("../../assets/Icons/search.svg");
     background-position: 0.75rem center;
     background-repeat: no-repeat;
@@ -65,12 +58,28 @@
     margin: 1rem 0.5rem 1rem 0;
     width: 100%;
 
+    &:focus {
+      outline: none;
+      border-color: $primary-brainflix-blue;
+      box-shadow: 0 0 0.25rem $primary-brainflix-blue;
+    }
+
+    &:hover {
+      border-color: $secondary-brainflix-blue;
+    }
+
+    &.error {
+      border-color: red;
+      background-color: lighten(red, 40%);
+    }
+
     @include tablet {
       margin: 1rem;
     }
     @include desktop {
       margin: 1rem;
     }
+
   }
 
   &__upload {

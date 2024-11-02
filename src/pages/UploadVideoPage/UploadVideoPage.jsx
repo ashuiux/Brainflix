@@ -1,33 +1,48 @@
-// import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import "./UploadVideoPage.scss";
 import uploadImage from "../../assets/Images/Upload-video-preview.jpg";
 
 function UploadVideoPage() {
+  const navigate = useNavigate();
+
+  function handleSubmit()
+  {
+    alert("uploaded successfully");
+    navigate ("/");
+  }
+
   return (
     <>
-      <div className="upload">
-        <img src={uploadImage} alt="upload__img" className="upload__img" />
-        <div className="upload__input">
-          <label htmlFor="videoTitle" className="upload__textarea">
-            Title your video
-            <textarea
-              className="upload__title upload__textarea"
-              placeholder="Add title to your video"
-            ></textarea>
-          </label>
-          <label htmlFor="videoDescription" className="upload__textarea">
-            Add a video description
-            <textarea
-              className="upload__description"
-              placeholder="Add a descriptionn to your video"
-            ></textarea>
-          </label>
+      <form onSubmit={handleSubmit} className="upload">
+        <h2 className="upload__title">Upload Video</h2>
+        <div className="upload__content">
+          <div className="upload__thumbnail">Video Thumbnail <img src={uploadImage} alt="upload__img" className="upload__img" />
+          </div>
+          <div className="upload__input">
+            <label htmlFor="videoTitle" className="upload__label">
+              Title your video
+              <textarea
+                className="upload__textarea"
+                placeholder="Add title to your video"
+             rows="1"
+             ></textarea>
+            </label>
+            <label htmlFor="videoDescription" className="upload__label">
+              Add a video description
+              <textarea
+                className="upload__textarea"
+                placeholder="Add a descriptionn to your video"
+                 rows="5"
+              ></textarea>
+            </label>
+          </div>
         </div>
-        <div className="upload__buttons">
-          <input type="button" value="Cancel" className="upload__cancel" />
-          <input type="button" value="Publish" className="upload__publish" />
+
+        <div className="buttons">
+          <button type="submit" className="buttons__publish" > Publish </button>
+          <button type="button" className="buttons__cancel" > Cancel </button>
         </div>
-      </div>
+      </form>
     </>
   );
 }

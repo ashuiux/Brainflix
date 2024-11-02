@@ -2,7 +2,6 @@ import "./Video.scss";
 
 function Video({ video }) {
   const date = new Date(video.timestamp);
-  console.log(date.toDateString());
 
   return (
     <>

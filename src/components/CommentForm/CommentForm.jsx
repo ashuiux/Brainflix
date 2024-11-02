@@ -10,11 +10,11 @@ function CommentForm() {
 
             <div className="comment-section__form__details">
               <h3 className="comment-section__title">Join the Conversation</h3>
-
               <div className="comment-section__form__input">
                 <textarea
                   className="comment-section__form__textarea"
                   placeholder="Add a new comment"
+                 
                 ></textarea>
               </div>
             </div>
