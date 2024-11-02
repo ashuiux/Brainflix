@@ -158,5 +158,12 @@
       margin: 1rem 0;
       width: 20%;
     }
+    &:hover {
+      background-color: $secondary-alabaster; 
+      color: $secondary-brainflix-blue;
+
+    }
   }
+
+
 }

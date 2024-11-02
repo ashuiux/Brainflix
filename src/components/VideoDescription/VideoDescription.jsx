@@ -18,7 +18,7 @@ function VideoDescription({ video }) {
             </div>
             <div className="video__icons">
               <div className="video__views">
-                <img  className="video__views-icon" src={ViewsIcon} alt="view-icon" /> {" "}   {video.views}
+                <img  className="video__views-icon" src={ViewsIcon} alt="view-icon" /> {" "} {video.views}
               </div>
               <div className="video__likes">
                 <img className="video__likes-icon" src={LikeIcon} alt="like-icon"/>{" "} {video.likes}

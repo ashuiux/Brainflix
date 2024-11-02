@@ -1,11 +1,9 @@
 @use "../../styles/index" as *;
 .comments {
-
   width: 100%;
   padding: 0 1rem 0 1rem;
 
-  @include desktop
-  {
+  @include desktop {
     padding: 0 0 0 1rem;
   }
 
@@ -21,16 +19,13 @@
 .comment {
   @include flex-row;
   border-bottom: 0.0625rem solid $secondary-mercury;
-  
 
   &__name {
     @include page-header-mobile;
   }
- &__heading
- {
-  font-size: 1rem;
-
- }
+  &__heading {
+    font-size: 1rem;
+  }
   &__content {
     @include flex-column;
     padding: 1rem 0;

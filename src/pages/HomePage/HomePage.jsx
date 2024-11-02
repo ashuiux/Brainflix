@@ -12,50 +12,52 @@ const API_KEY = "6a208584-4f67-46cb-bf09-d42701a738b4";
 const BASE_URL = `https://unit-3-project-api-0a5620414506.herokuapp.com/videos`;
 
 function HomePage() {
-  const {videoId } = useParams();
+  const { videoId } = useParams();
   const [selectedVideo, setSelectedVideo] = useState({});
   const [allVideos, setAllVideos] = useState([]);
-
-  const selectedVideoId = videoId
-    ? videoId
-    : "84e96018-4022-434e-80bf-000ce4cd12b8"; //either use param or the first video
 
   useEffect(() => {
     const getAllVideos = async () => {
       try {
         const response = await axios.get(`${BASE_URL}?api_key=${API_KEY}`);
         setAllVideos(response.data);
+        const selectedVideoId = videoId || response.data[0]?.id;
+        if (selectedVideoId) {
+          getVideoById(selectedVideoId);
+        }
       } catch (error) {
         console.error("Error fetching videos list:", error);
       }
     };
+
     getAllVideos();
-  }, []);
+  }, [videoId]);
 
-
-  useEffect(() => {
-    const getVideoById = async (id) => {
-      try {
-        const response = await axios.get(`${BASE_URL}/${id}?api_key=${API_KEY}`);
-        setSelectedVideo(response.data);
-      } catch (error) {
-        console.error("Error fetching video by id", error);
-      }
-    };
-
-    getVideoById(selectedVideoId);
-  }, [selectedVideoId]);
+  const getVideoById = async (id) => {
+    try {
+      const response = await axios.get(`${BASE_URL}/${id}?api_key=${API_KEY}`);
+      setSelectedVideo(response.data);
+    } catch (error) {
+      console.error("Error fetching video by id", error);
+    }
+  };
 
   return (
     <>
       <Video video={selectedVideo} />
       <div className="video-info">
         <div className="video-info__data">
-           <VideoDescription video={selectedVideo} /> 
-           <CommentForm />
-           <CommentList comments={selectedVideo.comments} /> 
-           </div>
-        <div className="video-info__next"> <NextVideos selectedVideo={selectedVideo} allVideos={allVideos} setSelectedVideo={setSelectedVideo} />
+          <VideoDescription video={selectedVideo} />
+          <CommentForm />
+          <CommentList comments={selectedVideo.comments} />
+        </div>
+        <div className="video-info__next">
+          {" "}
+          <NextVideos
+            selectedVideo={selectedVideo}
+            allVideos={allVideos}
+            setSelectedVideo={setSelectedVideo}
+          />
         </div>
       </div>
     </>

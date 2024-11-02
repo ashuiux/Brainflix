@@ -1,10 +1,10 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./NextVideoCard.scss";
 
 function NextVideoCard({ video }) {
   return (
-    <Link to ={`/videos/${video.id}`}>
+    <Link to={`/videos/${video.id}`}>
       <div className="videocard">
         <img className="videocard__media" src={video.image} />
         <div className="videocard__info">

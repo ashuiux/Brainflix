@@ -1,27 +1,21 @@
 import "./NextVideos.scss";
 import NextVideoCard from "../NextVideoCard/NextVideoCard";
+import { Link } from "react-router-dom";
 
-function NextVideos({ selectedVideo, allVideos, setSelectedVideo }) {
-  const filteredVideos = allVideos.filter((video) => {
-    return video.id !== selectedVideo.id;
-  });
-  function updateSelectedVideo(videoId) {
-    const foundVideo = allVideos.find((video) => video.id == videoId);
-    setSelectedVideo(foundVideo);
-  }
+function NextVideos({ selectedVideo, allVideos }) {
+  const filteredVideos = allVideos.filter(
+    (video) => video.id !== selectedVideo.id
+  );
 
   return (
-    <>
-      <div className="videos">
-        <h2 className="videos__heading"> NEXT VIDEOS</h2>
-        {filteredVideos.map((video) => (
-          <NextVideoCard
-            key={video.id}
-            video={video}
-          />
-        ))}
-      </div>
-    </>
+    <div className="videos">
+      <h2 className="videos__heading">NEXT VIDEOS</h2>
+      {filteredVideos.map((video) => (
+        <Link key={video.id} to={`/video/${video.id}`} className="videos__link">
+          <NextVideoCard video={video} />
+        </Link>
+      ))}
+    </div>
   );
 }
 

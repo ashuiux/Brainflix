@@ -1,8 +1,7 @@
 import React from "react";
 import "./CommentList.scss";
 
-function CommentList({  comments = [] }) {
-  console.log({comments});
+function CommentList({ comments = [] }) {
 
   return (
     <div className="comments">

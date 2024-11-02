@@ -2,7 +2,7 @@
 
 .header {
   @include flex-column;
-  margin: 0 1rem;
+  margin:  1rem;
   align-items: center;
 
   @include tablet {

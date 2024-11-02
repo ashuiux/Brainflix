@@ -14,7 +14,6 @@ function CommentForm() {
                 <textarea
                   className="comment-section__form__textarea"
                   placeholder="Add a new comment"
-                 
                 ></textarea>
               </div>
             </div>
