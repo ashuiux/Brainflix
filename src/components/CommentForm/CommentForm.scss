@@ -72,7 +72,6 @@
 
       &.error {
         border-color: red;
-        background-color: lighten(red, 40%);
       }
 
       @include tablet {
