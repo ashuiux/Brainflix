@@ -1,13 +1,33 @@
 import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
 import "./UploadVideoPage.scss";
 import uploadImage from "../../assets/Images/Upload-video-preview.jpg";
 
 function UploadVideoPage() {
   const navigate = useNavigate();
 
-  function handleSubmit() {
-    alert("Published successfully");
-    navigate("/");
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    const title = event.target.elements.videoTitle.value;
+    const description = event.target.elements.videoDescription.value;
+
+    const videoData = {
+      title,
+      channel: "Default Channel", 
+      description,
+    };
+
+    axios
+      .post("http://localhost:8080/videos", videoData)
+      .then(() => {
+        alert("Published successfully");
+        navigate("/");
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        alert("There was an error uploading the video");
+      });
   }
 
   function handleCancel() {
@@ -28,6 +48,7 @@ function UploadVideoPage() {
             <label htmlFor="videoTitle" className="upload__label">
               Title your video
               <textarea
+                name="videoTitle"
                 className="upload__textarea"
                 placeholder="Add title to your video"
                 rows="1"
@@ -36,8 +57,9 @@ function UploadVideoPage() {
             <label htmlFor="videoDescription" className="upload__label">
               Add a video description
               <textarea
+                name="videoDescription"
                 className="upload__textarea"
-                placeholder="Add a descriptionn to your video"
+                placeholder="Add a description to your video"
                 rows="5"
               ></textarea>
             </label>
@@ -46,13 +68,11 @@ function UploadVideoPage() {
 
         <div className="buttons">
           <button type="submit" className="buttons__publish">
-            {" "}
-            Publish{" "}
+            Publish
           </button>
-          <button type="reset" className="buttons__cancel">
-            {" "}
-            Cancel{" "}
-          </button>
+          <Link to="/upload" className="buttons__cancel">
+            Cancel
+          </Link>
         </div>
       </form>
     </>

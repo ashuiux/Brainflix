@@ -24,7 +24,7 @@
       @include flex-row;
       align-items: center;
       justify-content: flex-end;
-      width: 80%;
+      width: 65%;
     }
     @include desktop {
       @include flex-row;
@@ -70,7 +70,6 @@
 
     &.error {
       border-color: red;
-      background-color: lighten(red, 40%);
     }
 
     @include tablet {
